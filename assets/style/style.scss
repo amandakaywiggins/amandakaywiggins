@@ -1,0 +1,338 @@
+$colors: (
+    primary: #EF17FE,
+    secondary: #5729FD,
+    tertiary:  #ffffff,
+    accent: #CDE700,
+    dark: #461214,
+    shadow: #3f3f3f
+);
+
+@function colors($color-name) {
+    @return map-get($colors, $color-name)
+}
+
+$desktop: 840px;
+$tablet: 768px;
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet}) {
+    @content;
+  }
+}
+
+body {
+    font-family: 'Vollkorn', serif;
+}
+
+h2 {
+    color: colors(tertiary);
+    text-transform: lowercase;
+    text-shadow: 2px 2px 5px colors(shadow);
+    margin-top: 0.5em;
+
+    @include tablet {
+      font-size: 4em;
+    }
+}
+
+#header {
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: colors(secondary);
+    background-image: url(../images/index-background-image.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    h1 {
+        padding-top: 0.5em;
+        text-align: center;
+        font-size: 4em;
+        font-style: normal;
+        font-style: italic;
+        text-transform: lowercase;
+        text-shadow: 2px 2px 5px colors(shadow);
+        color: colors(tertiary);
+
+        @include tablet {
+          margin-top: 2em;
+        }
+    }
+
+    h2 {
+        font-size: 0.8em;
+        text-transform: lowercase;
+        color: #000000;
+        margin-top: 2.5em;
+    }
+
+    section {
+        padding-top: 0.1em;
+        text-align: center;
+        font-size: 2em;
+        text-shadow: 2px 2px 5px colors(shadow);
+        color: colors(tertiary);
+
+        @include tablet {
+          width: 33%;
+          float: right;
+          margin-top: 2em;
+          margin-bottom: 1em;
+        }
+
+        a {
+            text-decoration: none;
+            color: colors(tertiary);
+        }
+
+        a:hover {
+            color: colors(accent);
+        }
+    }
+
+    #social-media {
+        text-align: center;
+        padding-top: 1em;
+
+        .index-social {
+            padding: 20px;
+            color: colors(tertiary);
+            text-shadow: 2px 2px 5px colors(shadow);
+        }
+
+        a:hover {
+            color: colors(primary);
+        }
+    }
+}
+
+
+
+#coding {
+    height: 100%;
+    min-height: 100vh;
+    margin-top: 2em;
+    background-color: colors(dark);
+    background-image: linear-gradient(colors(primary), colors(primary), colors(primary), colors(secondary));
+    border-top: 5px solid colors(accent);
+    text-align: center;
+
+    h2 {
+      text-align: left;
+    }
+
+    img {
+      width: 50vh;
+      border: 5px solid colors(tertiary);
+      border-radius: 50%;
+      margin: auto;
+      margin-bottom: 5px;
+
+      @include desktop {
+        margin: 20px;
+      }
+    }
+}
+
+#art {
+    height: 100%;
+    margin-top: 2em;
+    background-color: colors(primary);
+    background-image: linear-gradient(colors(secondary), colors(secondary), colors(secondary), colors(dark));
+    border-top: 5px solid colors(accent);
+
+    .artimages {
+        margin-bottom: 3em;
+        text-align: center;
+    }
+
+
+    .artimage {
+      @include desktop {
+        float: left;
+        margin: 2em;
+      }
+    }
+
+    h3 {
+        display: block;
+        float: right;
+        color: colors(tertiary);
+        text-shadow: 2px 2px 5px colors(shadow);
+        text-align: center;
+        font-size: 1em;
+        margin-top: 4em;
+        margin-left: -3em;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+
+        @include desktop {
+          display: inline;
+          float: none;
+          margin: auto;
+        }
+    }
+
+    img {
+        border: 5px solid colors(tertiary);
+        margin: auto;
+        margin-top: 1em;
+        height: 300px;
+
+        @include tablet {
+          height: 700px;
+        }
+
+        @include desktop {
+          height: 70vh;
+          margin-right: 2em;
+          margin-bottom: 2em;
+        }
+      }
+
+    img:hover {
+        opacity: 0.5;
+    }
+}
+
+#artcarousels {
+    display: none;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    z-index: 10;
+    background-color: colors(tertiary);
+
+    a {
+      text-decoration: none;
+      color: #000000;
+    }
+
+    #close{
+      cursor: pointer;
+      position: fixed;
+      font-size: 1em;
+
+      @include desktop {
+        font-size: 3em;
+      }
+    }
+
+    .bodiesI {
+        display: none;
+    }
+
+    .bodiesII {
+        display: none;
+    }
+
+    img {
+        display: inline-block;
+        margin-top: 1em;
+        max-width: 80vw;
+        max-height: 100vh;
+    }
+
+    h3 {
+      color: #000000;
+      margin-top: 0.5em;
+      font-size: 3em;
+    }
+
+    h4 {
+        margin-top: 0.4em;
+    }
+
+    p {
+        margin-top: -0.5em;
+        font-style: italic;
+    }
+}
+
+#about {
+    display: none;
+    height: 100vh;
+    color: colors(dark);
+    background-color: colors(accent);
+    background-image: linear-gradient(colors(accent), colors(accent), colors(accent), colors(primary));
+    text-align: right;
+
+    .bio {
+      background-color: rgba(255, 255, 255, 0.6);
+      padding: 10px;
+      margin-top: 20px;
+    }
+
+    img {
+      float: left;
+      border-radius: 2px;
+      width: 150px;
+      padding: 5px;
+
+      @include desktop {
+        width: 400px;
+        border-radius: 5px;
+      }
+    }
+
+    p {
+      font-size: 0.8em;
+
+      @include desktop {
+        font-size: 1.5em;
+      }
+    }
+}
+#menu {
+    position: fixed;
+    bottom: 0;
+    height: 50vh;
+    clip-path: polygon(100% 0, 15% 100%, 100% 100%);
+    background-color: colors(accent);
+    margin-bottom: -65%;
+
+    @include desktop {
+      margin-bottom: -20%;
+    }
+
+    #closemenu {
+      display: none;
+      color: colors(tertiary);
+      float: right;
+      margin-top: 50px;
+      text-shadow: 2px 2px 5px colors(shadow);
+      cursor: pointer;
+    }
+
+    #openmenu {
+      color: colors(tertiary);
+      float: right;
+      margin-top: 45px;
+      text-shadow: 2px 2px 5px colors(shadow);
+      cursor: pointer;
+    }
+
+    #menuitems {
+      margin-top: 12em;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    h2 {
+      text-align: right;
+      font-size: 1.5em;
+      color: colors(tertiary);
+      margin-top: 5px;
+      margin-right: 10px;
+    }
+}
