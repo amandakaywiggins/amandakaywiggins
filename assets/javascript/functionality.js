@@ -65,7 +65,7 @@ $(document).ready(function() {
     function watchSize(x) {
       if (x.matches) {
         $("#closemenu").click(function() {
-            $("#menu").css("margin-bottom", "-20%");
+            $("#menu").css("margin-bottom", "-15%");
             $("#closemenu").css("display", "none");
             $("#openmenu").css("display", "block");
         });
