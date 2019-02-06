@@ -1,4 +1,7 @@
 $(document).ready(function() {
+
+
+
     $("img").click(function() {
         var id = $(event.target).attr("id");
         console.log(id);
@@ -12,10 +15,6 @@ $(document).ready(function() {
         } else {
             console.log ("nope");
         }
-    });
-
-    $("#aboutclick").click(function() {
-        $("#about").css("display", "block");
     });
 
     function launchCarousel() {
