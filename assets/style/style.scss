@@ -258,10 +258,10 @@ h2 {
 }
 
 #about {
-    height: 100vh;
+    height: 120vh;
     color: colors(dark);
     background-color: colors(accent);
-    background-image: linear-gradient(colors(accent), colors(accent), colors(accent), colors(primary));
+    background-image: linear-gradient(colors(accent), colors(accent), colors(primary), colors(primary));
     text-align: right;
     margin-top: 2em;
     border-top: 5px solid colors(accent);
