@@ -57,38 +57,44 @@ $(document).ready(function() {
         });
     });
 
-    function watchSize(x) {
-      if (x.matches) {
+    x = $(window).width();
+    console.log(x);
+
+    function watchSize() {
+      if (x >= 415) {
         $("#closemenu").click(function() {
-            $("#menu").css("margin-bottom", "-15%");
+            $("#menu").css("transform", "translateY(0%)");
+            $("#menu").css("animation-duration", "4000");
+            $("#menuitems").css("display", "none");
             $("#closemenu").css("display", "none");
             $("#openmenu").css("display", "block");
         });
 
         $("#openmenu").click(function() {
-            $("#menu").css("margin-bottom", "0%");
+            $("#menu").css("transform", "translateY(-30%)");
+            $("#menuitems").css("display", "block");
             $("#closemenu").css("display", "block");
             $("#openmenu").css("display", "none");
-        })
-      } else {
+        });
+      }  else {
         $("#closemenu").click(function() {
-            $("#menu").css("margin-bottom", "-65%");
+            $("#menu").css("transform", "translateY(0%)");
+            $("#menu").css("animation-duration", "4000");
+            $("#menuitems").css("display", "none");
             $("#closemenu").css("display", "none");
             $("#openmenu").css("display", "block");
         });
 
         $("#openmenu").click(function() {
-            $("#menu").css("margin-bottom", "0%");
+            $("#menu").css("transform", "translateY(-65%)");
+            $("#menuitems").css("display", "block");
             $("#closemenu").css("display", "block");
             $("#openmenu").css("display", "none");
         })
       };
     };
 
-    var x = window.matchMedia("(min-width: 760px)")
-
-    watchSize(x);
-    x.addListener(watchSize);
+    watchSize();
 
     $("#menu a").click(function() {
         if (x.matches) {
@@ -96,7 +102,8 @@ $(document).ready(function() {
           $("#closemenu").css("display", "none");
           $("#openmenu").css("display", "block");
         } else {
-          $("#menu").css("margin-bottom", "-65%");
+          $("#menu").css("transform", "translateY(0%)");
+          $("#menuitems").css("display", "none");
           $("#closemenu").css("display", "none");
           $("#openmenu").css("display", "block");
         };

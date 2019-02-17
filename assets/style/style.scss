@@ -11,19 +11,28 @@ $colors: (
     @return map-get($colors, $color-name)
 }
 
-$desktop: 840px;
-$tablet: 768px;
+$tablet-min: 415px;
+$tablet-max: 768px;
+$laptop-min: 769px;
+$laptop-max: 812px;
+$desktop: 813px;
 
-@mixin desktop {
-  @media (min-width: #{$desktop}) {
-    @content;
+@mixin tablet {
+  @media (min-width: #{$tablet-min}) and (max-width: #{$tablet-max}) {
+      @content;
   }
 }
 
-@mixin tablet {
-  @media (min-width: #{$tablet}) {
-    @content;
-  }
+@mixin laptop {
+    @media (min-width: #{$laptop-min}) and (max-width: #{$laptop-max}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
 }
 
 body {
@@ -258,7 +267,7 @@ h2 {
 }
 
 #about {
-    height: 120vh;
+    height: 100%;
     color: colors(dark);
     background-color: colors(accent);
     background-image: linear-gradient(colors(accent), colors(accent), colors(primary), colors(primary));
@@ -270,6 +279,7 @@ h2 {
       background-color: rgba(255, 255, 255, 0.6);
       padding: 10px;
       margin-top: 20px;
+      margin-bottom: 30%;
     }
 
     img {
@@ -300,8 +310,16 @@ h2 {
     background-color: colors(accent);
     margin-bottom: -65%;
 
+    @include tablet {
+        margin-bottom: -30%;
+    }
+
+    @include laptop {
+        margin-bottom: -15%;
+    }
+
     @include desktop {
-      margin-bottom: -15%;
+        margin-bottom: -10%;
     }
 
     #closemenu {
@@ -322,7 +340,12 @@ h2 {
     }
 
     #menuitems {
-      margin-top: 12em;
+        display: none;
+        margin-top: 10em;
+
+        @include tablet {
+            margin-top: 5em;
+        }
     }
 
     a {
@@ -333,7 +356,7 @@ h2 {
       text-align: right;
       font-size: 1.5em;
       color: colors(tertiary);
-      margin-top: 5px;
+      margin-top: 4px;
       margin-right: 10px;
     }
 }
