@@ -16,6 +16,7 @@ $(document).ready(function() {
         $(".bodiesI").css("display", "block");
         $(".heartlines").css("display", "none");
         $(".bodiesII").css("display", "none");
+        $(".chum").css("display", "none");
 
         $("#close").click(function() {
             $("#artcarousels").scrollTop();
@@ -32,6 +33,7 @@ $(document).ready(function() {
         $(".bodiesII").css("display", "block");
         $(".heartlines").css("display", "none");
         $(".bodiesI").css("display", "none");
+        $(".chum").css("display", "none");
 
         $("#close").click(function() {
             $("#artcarousels").scrollTop();
@@ -48,11 +50,29 @@ $(document).ready(function() {
         $(".heartlines").css("display", "block");
         $(".bodiesI").css("display", "none");
         $(".bodiesII").css("display", "none");
+        $(".chum").css("display", "none");
 
         $("#close").click(function() {
             $("#artcarousels").scrollTop();
             $("#artcarousels").css("display", "none");
             $(".heartlines").css("display", "none");
+            $("body").css("position", "static");
+        });
+    });
+
+    $("#chum").click(function() {
+        $("body").css("position", "fixed");
+        $("#artcarousels").show("slow");
+        $("#artcarousels").css("display", "block");
+        $(".chum").css("display", "block");
+        $(".bodiesI").css("display", "none");
+        $(".heartlines").css("display", "none");
+        $(".bodiesII").css("display", "none");
+
+        $("#close").click(function() {
+            $("#artcarousels").scrollTop();
+            $("#artcarousels").css("display", "none");
+            $(".chum").css("display", "none");
             $("body").css("position", "static");
         });
     });
