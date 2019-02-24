@@ -294,6 +294,18 @@ h2 {
       }
     }
 
+    h3 {
+      color: colors(primary);
+    }
+
+    h3:hover {
+      color: colors(secondary);
+    }
+
+    a {
+      text-decoration: none;
+    }
+
     p {
       font-size: 0.8em;
 
