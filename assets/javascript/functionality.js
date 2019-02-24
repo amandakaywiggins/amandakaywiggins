@@ -10,71 +10,59 @@ $(document).ready(function() {
     };
 
     $("#bodiesI").click(function() {
-        $("body").css("position", "fixed");
         $("#artcarousels").show("slow");
-        $("#artcarousels").css("display", "block");
+        $("#artcarousels").css("overflowy", "scroll")
         $(".bodiesI").css("display", "block");
-        $(".heartlines").css("display", "none");
-        $(".bodiesII").css("display", "none");
-        $(".chum").css("display", "none");
+        $(".bodiesII, .heartlines, .chum").css("display", "none");
+        $("body").css("overflow", "hidden");
 
         $("#close").click(function() {
-            $("#artcarousels").scrollTop();
-            $("#artcarousels").css("display", "none");
+            $("#artcarousels").hide("slow");
             $(".bodiesI").css("display", "none");
-            $("body").css("position", "static");
+            $("body").css("overflow", "auto");
         });
     });
 
     $("#bodiesII").click(function() {
-        $("body").css("position", "fixed");
         $("#artcarousels").show("slow");
-        $("#artcarousels").css("display", "block");
+        $("#artcarousels").css("overflowy", "scroll")
         $(".bodiesII").css("display", "block");
-        $(".heartlines").css("display", "none");
-        $(".bodiesI").css("display", "none");
-        $(".chum").css("display", "none");
+        $(".bodiesI, .heartlines, .chum").css("display", "none");
+        $("body").css("overflow", "hidden");
 
-        $("#close").click(function() {
-            $("#artcarousels").scrollTop();
-            $("#artcarousels").css("display", "none");
-            $(".bodiesI").css("display", "none");
-            $("body").css("position", "static");
-        });
+      $("#close").click(function() {
+          $("#artcarousels").hide("slow");
+          $(".bodiesII").css("display", "none");
+          $("body").css("overflow", "auto");
+      });
     });
 
     $("#heartlines").click(function() {
-        $("body").css("position", "fixed");
         $("#artcarousels").show("slow");
-        $("#artcarousels").css("display", "block");
+        $("#artcarousels").css("overflowy", "scroll")
         $(".heartlines").css("display", "block");
-        $(".bodiesI").css("display", "none");
-        $(".bodiesII").css("display", "none");
-        $(".chum").css("display", "none");
+        $(".bodiesI, .bodiesII, .chum").css("display", "none");
+        $("body").css("overflow", "hidden");
 
-        $("#close").click(function() {
-            $("#artcarousels").scrollTop();
-            $("#artcarousels").css("display", "none");
-            $(".heartlines").css("display", "none");
-            $("body").css("position", "static");
-        });
+      $("#close").click(function() {
+          $("#artcarousels").hide("slow");
+          $(".heartlines").css("display", "none");
+          $("body").css("overflow", "auto");
+      });
     });
 
     $("#chum").click(function() {
-        $("body").css("position", "fixed");
         $("#artcarousels").show("slow");
-        $("#artcarousels").css("display", "block");
+        $("#artcarousels").css("overflowy", "scroll")
         $(".chum").css("display", "block");
-        $(".bodiesI").css("display", "none");
-        $(".heartlines").css("display", "none");
-        $(".bodiesII").css("display", "none");
+        $(".bodiesI, .bodiesII, .heartlines").css("display", "none");
+        $("body").css("overflow", "hidden");
 
-        $("#close").click(function() {
-            $("#artcarousels").scrollTop();
-            $("#artcarousels").css("display", "none");
-            $(".chum").css("display", "none");
-            $("body").css("position", "static");
-        });
+      $("#close").click(function() {
+          $("#artcarousels").hide("slow");
+          $(".chum").css("display", "none");
+          $("body").css("overflow", "auto");
+      });
     });
 
     x = $(window).width();
