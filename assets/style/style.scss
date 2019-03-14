@@ -8,7 +8,7 @@ $colors: (
 );
 
 @function colors($color-name) {
-    @return map-get($colors, $color-name)
+    @return map-get($colors, $color-name);
 }
 
 $tablet-min: 415px;
@@ -279,14 +279,13 @@ h2 {
       background-color: rgba(255, 255, 255, 0.6);
       padding: 10px;
       margin-top: 20px;
-      margin-bottom: 30%;
+      margin-bottom: 100px;
     }
 
     img {
       float: left;
-      border-radius: 2px;
       width: 150px;
-      padding: 5px;
+      border: 5px solid colors(tertiary);
 
       @include desktop {
         width: 400px;
@@ -317,22 +316,10 @@ h2 {
 #menu {
     position: fixed;
     bottom: 0;
-    height: 50vh;
+    height: 40vh;
     clip-path: polygon(100% 0, 15% 100%, 100% 100%);
     background-color: colors(accent);
-    margin-bottom: -65%;
-
-    @include tablet {
-        margin-bottom: -30%;
-    }
-
-    @include laptop {
-        margin-bottom: -15%;
-    }
-
-    @include desktop {
-        margin-bottom: -10%;
-    }
+    margin-bottom: -200px;
 
     #closemenu {
       display: none;
@@ -346,7 +333,7 @@ h2 {
     #openmenu {
       color: colors(tertiary);
       float: right;
-      margin-top: 45px;
+      margin-top: 35px;
       text-shadow: 2px 2px 5px colors(shadow);
       cursor: pointer;
     }
